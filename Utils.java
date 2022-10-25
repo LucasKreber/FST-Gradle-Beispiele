@@ -1,9 +1,14 @@
-import org.apache.commons.io.FilenameUtils;
+import com.google.gson.Gson;
+
+import java.util.Map;
 
 public class Utils {
 
-    public String getFullPath(String str) {
-        return FilenameUtils.getFullPath(str);
+    public static String mapToJsonString(Map<Integer, String> map) {
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(map);
+
+        return jsonString;
     }
 
 }

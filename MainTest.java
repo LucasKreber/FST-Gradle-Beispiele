@@ -1,19 +1,19 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainTest {
 
-    private Utils utils;
-
-    @Before
-    public void setUp() {
-        utils = new Utils();
-    }
-
     @Test
-    public void fileLoadingTest() {
-        String path = utils.getFullPath("C:\\Users\\Lilykos\\workspace\\ApacheCommonsExample\\ExampleFolder\\exampleTxt.txt");
-        Assert.assertEquals(path, "C:\\Users\\Lilykos\\workspace\\ApacheCommonsExample\\ExampleFolder\\");
+    public void toJsonStringTest() {
+        Map<Integer, String> colours = new HashMap<>();
+        colours.put(1, "blue");
+        colours.put(2, "yellow");
+        colours.put(3, "green");
+	    System.out.println("Test running");
+        Assert.assertEquals("{\"1\":\"blue\",\"2\":\"yellow\",\"3\":\"green\"}", Utils.mapToJsonString(colours));
     }
+
 }

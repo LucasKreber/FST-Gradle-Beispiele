@@ -1,11 +1,16 @@
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
 
-    private static final String EXAMPLE_TXT_PATH =
-            "C:\\Users\\Lilykos\\workspace\\ApacheCommonsExample\\ExampleFolder\\exampleTxt.txt";
-
     public static void main(String[] args) {
-        Utils utils = new Utils();
-        System.out.println("Full path of exampleTxt: " + utils.getFullPath(EXAMPLE_TXT_PATH));
+        Map<Integer, String> colours = new HashMap<>();
+        colours.put(1, "blue");
+        colours.put(2, "yellow");
+        colours.put(3, "green");
+
+
+        System.out.println(Utils.mapToJsonString(colours));
     }
 }
